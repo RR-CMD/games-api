@@ -54,7 +54,7 @@ testing and portfolio review.
 ### Prerequisites
 Depending on how you choose to run the application, ensure you have the following installed:
 *   **For Docker:** [Docker](https://www.docker.com/) & [Docker Compose](https://docs.docker.com/compose/)
-*   **For Local Development:** [Java 21]([https://jdk.java.net/26/](https://www.oracle.com/ae/java/technologies/downloads/#java21)), [Maven](https://maven.apache.org/), and [PostgreSQL](https://www.postgresql.org/)
+*   **For Local Development:** [Java 21]([https://jdk.java.net/26/](https://www.oracle.com/ae/java/technologies/downloads/#java21)) and [PostgreSQL](https://www.postgresql.org/)
 
 Running with Docker (Recommended)
 
