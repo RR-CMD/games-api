@@ -64,7 +64,7 @@ Running with Docker (Recommended)
     cd games-api
 	 ```
 
-3.  Spin up the application and PostgreSQL database using Docker Compose:
+3.  Start Docker and spin up the application and PostgreSQL database using Docker Compose:
 	```bash
     docker-compose up -d --build
 	```
@@ -80,11 +80,6 @@ Running Locally (Without Docker)
 If you prefer to run it locally, ensure you have a PostgreSQL instance running
 locally on port 5432 with a database named games_db, user postgres, and password
 root.
-
-```bash
-mvn clean install
-mvn spring-boot:run
-```
 
 ## 📖 API Documentation (Swagger UI)
 
