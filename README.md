@@ -78,7 +78,7 @@ If you prefer to run it locally, ensure you have a PostgreSQL instance running l
 
 **Using an IDE (Easiest)**
 
-1. Open the project in IntelliJ IDEA, Eclipse, or VS Code.
+1. Open the project in your preferred Java IDE.
 2. Let Maven download the dependencies.
 3. Run the `GamesApplication.java` main class.
 
