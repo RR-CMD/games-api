@@ -53,33 +53,47 @@ testing and portfolio review.
 
 ### Prerequisites
 Depending on how you choose to run the application, ensure you have the following installed:
-*   **For Docker:** [Docker](https://www.docker.com/)
-*   **For Local Development:** [Java 21](https://www.oracle.com/ae/java/technologies/downloads/#java21) & [PostgreSQL](https://www.postgresql.org/)
+* **For Docker:** [Docker](https://www.docker.com/)
+* **For Local Development:** [Java 21](https://www.oracle.com/ae/java/technologies/downloads/#jdk21-windows) & [PostgreSQL](https://www.postgresql.org/download/)
 
-Running with Docker (Recommended)
+### 1. Get the Code
+First, clone the repository and navigate into the project directory:
+```bash
+git clone https://github.com/RR-CMD/games-api.git
+cd games-api
+```
 
-1.  Clone the repository:
-	```bash
-    git clone https://github.com/RR-CMD/games-api.git
-    cd games-api
-	 ```
+### 2. Run the Application
+Choose one of the following methods to run the API:
 
-3.  Start Docker and spin up the application and PostgreSQL database using Docker Compose:
-	```bash
-    docker-compose up -d --build
-	```
-4.  Database Seeding: On the very first startup, the DatabaseDataFiller will
-    automatically activate. It will communicate with the RAWG API to fetch 10
-    real games and generate dummy users, reviews, and tracking lists. (Note:
-    This makes the initial startup take a few seconds longer).
+#### Option A: Running with Docker (Recommended)
+Start Docker and spin up the application and PostgreSQL database using Docker Compose:
+```bash
+docker-compose up -d --build
+```
+> **Database Seeding:** On the very first startup, the `DatabaseDataFiller` will automatically activate. It will communicate with the RAWG API to fetch 10 real games and generate dummy users, reviews, and tracking lists. *(Note: This makes the initial startup take a few seconds longer).*
 
-5.  The API is now running at: http://localhost:8080
+#### Option B: Running Locally (Without Docker)
+If you prefer to run it locally, ensure you have a PostgreSQL instance running locally on port `5432` with a database named `games_db`, user `postgres`, and password `root`.
 
-Running Locally (Without Docker)
+**Using an IDE (Easiest)**
 
-If you prefer to run it locally, ensure you have a PostgreSQL instance running
-locally on port 5432 with a database named games_db, user postgres, and password
-root.
+1. Open the project in IntelliJ IDEA, Eclipse, or VS Code.
+2. Let Maven download the dependencies.
+3. Run the `GamesApplication.java` main class.
+
+
+**Using the Command Line**
+
+If you prefer the terminal, you can run the application using the included Maven wrapper:
+```bash
+./mvnw clean install
+./mvnw spring-boot:run
+```
+
+### Accessing the API
+Once started via Docker or your local machine, the API will be available at:
+**http://localhost:8080**
 
 ## 📖 API Documentation (Swagger UI)
 
