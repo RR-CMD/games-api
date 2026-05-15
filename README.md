@@ -147,7 +147,7 @@ This project maintains high-integrity test coverage, reaching **100% line covera
 To run the full test suite and verify the application:
 
 ```bash
-mvn test
+./mvnw test
 ```
 
 ## 💡 Highlighted Code Segments for Reviewers
