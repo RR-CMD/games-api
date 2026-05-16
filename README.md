@@ -1,7 +1,7 @@
 ## 🎮 Video Game Library Management API
 
 ![Java](https://img.shields.io/badge/Java-21-orange?style=for-the-badge&logo=java)
-![Spring Boot](https://img.shields.io/badge/Spring_Boot-4.0.5-brightgreen?style=for-the-badge&logo=spring-boot)
+![Spring Boot](https://img.shields.io/badge/Spring_Boot-4-brightgreen?style=for-the-badge&logo=spring-boot)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-15-blue?style=for-the-badge&logo=postgresql)
 ![Docker](https://img.shields.io/badge/Docker-Enabled-2496ED?style=for-the-badge&logo=docker)
 
@@ -37,7 +37,7 @@ external RAWG Video Games API.
 
 ## 🛠️ Technology Stack
 
-  - Core: Java 21, Spring Boot 4.0.5
+  - Core: Java 21, Spring Boot 4
   - Data Access: Spring Data JPA, Hibernate, PostgreSQL
   - Security: Spring Security, JWT (JSON Web Tokens), BCrypt
   - External Communication: Spring Cloud OpenFeign
