@@ -69,7 +69,7 @@ public class UserGameController {
             @RequestParam(required = false) String status, @RequestParam(required = false) String genre,
             @RequestParam(required = false) String title, @RequestParam(required = false) Integer startYear,
             @RequestParam(required = false) Integer endYear,
-            @ParameterObject @PageableDefault(sort = "updatedAt", direction = Sort.Direction.DESC, size = 20) Pageable pageable) {
+            @ParameterObject @PageableDefault(sort = "updatedAt", direction = Sort.Direction.DESC, size = 25) Pageable pageable) {
         return ApiResponse.success(
                 userGameService.getByUserId(userId, status, genre, title, startYear, endYear, pageable));
     }
