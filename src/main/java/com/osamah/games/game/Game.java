@@ -81,5 +81,4 @@ public class Game extends BaseEntity {
         this.platforms = platforms;
     }
 
-    ;
 }

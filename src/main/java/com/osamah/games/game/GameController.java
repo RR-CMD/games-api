@@ -32,7 +32,7 @@ public class GameController {
             @RequestParam(required = false) List<String> genres, @RequestParam(required = false) Integer startYear,
             @RequestParam(required = false) Integer endYear, @RequestParam(required = false) Double minScore,
             @RequestParam(required = false) List<String> platforms,
-            @ParameterObject @PageableDefault(sort = "averageScore", direction = Sort.Direction.ASC, size = 50) Pageable pageable) {
+            @ParameterObject @PageableDefault(sort = "totalAdded", direction = Sort.Direction.ASC, size = 50) Pageable pageable) {
         return ApiResponse.success(
                 gameService.searchGames(title, genres, startYear, endYear, minScore, platforms, pageable));
     }

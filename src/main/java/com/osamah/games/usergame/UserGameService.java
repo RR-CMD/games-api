@@ -14,6 +14,8 @@ import com.osamah.games.usergame.dto.UserGameStatsResponse;
 import com.osamah.games.usergame.enums.GameStatus;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Caching;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -30,6 +32,9 @@ public class UserGameService {
     private final UserRepository userRepository;
     private final GameRepository gameRepository;
 
+    @Caching(evict = {@CacheEvict(value = "userDefaultList", allEntries = true), @CacheEvict(value = "userStats",
+            key = "#userEmail") // Note: Make sure the key matches however you keyed the @Cacheable method!
+    })
     @Transactional
     public UserGameResponse create(String userEmail, UserGameCreateRequest request) {
 
@@ -58,7 +63,8 @@ public class UserGameService {
         return toResponse(userGameRepository.save(ug));
     }
 
-
+    @Caching(evict = {@CacheEvict(value = "userDefaultList", allEntries = true), @CacheEvict(value = "userStats",
+            key = "#userEmail")})
     @Transactional
     public UserGameResponse patch(String userEmail, Long gameId, UserGamePatchRequest request) {
         User user = findUserByEmail(userEmail);
@@ -91,6 +97,8 @@ public class UserGameService {
         return toResponse(userGameRepository.saveAndFlush(ug));
     }
 
+    @Caching(evict = {@CacheEvict(value = "userDefaultList", allEntries = true), @CacheEvict(value = "userStats",
+            key = "#userEmail")})
     @Transactional
     public void delete(String userEmail, Long gameId) {
         User user = findUserByEmail(userEmail);
