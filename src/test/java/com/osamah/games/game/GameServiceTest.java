@@ -84,6 +84,8 @@ class GameServiceTest {
         Game eldenRing = Game.builder()
                 .slug(slug)
                 .title("Elden Ring")
+                .genres(List.of("RPG"))
+                .platforms((List.of("PC")))
                 .build();
         setField(eldenRing, "id", 50L);
 

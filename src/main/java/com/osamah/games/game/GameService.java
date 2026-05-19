@@ -62,16 +62,16 @@ public class GameService {
         } catch (FeignException.NotFound e) {
             throw new ResourceNotFoundException("Game not found on RAWG API for slug: " + slug);
         }
-        List<String> genres = rawgData.genres()
+        List<String> genres = (rawgData.genres() != null) ? rawgData.genres()
                 .stream()
                 .map(RawgGameResponse.RawgGenre::name)
-                .toList();
+                .toList() : List.of();
 
-        List<String> platforms = rawgData.platforms()
+        List<String> platforms = (rawgData.platforms() != null) ? rawgData.platforms()
                 .stream()
                 .map(wrapper -> wrapper.platform()
                         .name())
-                .toList();
+                .toList() : List.of();
 
         Game newGame = Game.builder()
                 .slug(rawgData.slug())
