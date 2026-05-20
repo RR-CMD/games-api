@@ -6,7 +6,7 @@
 ![Redis](https://img.shields.io/badge/Redis-7-dc382d?style=for-the-badge&logo=redis)
 ![Docker](https://img.shields.io/badge/Docker-Enabled-2496ED?style=for-the-badge&logo=docker)
 
-A robust RESTful API for a Video Game Library Tracking System (similar to MyAnimeList or Backloggd). Built with **Java 21** and **Spring Boot 3**, this system allows users to track their gaming progress, rate games, write reviews, and discover new titles. Real game data is seamlessly fetched from the external RAWG Video Games API.
+A robust RESTful API for a Video Game Library Tracking System (similar to MyAnimeList or Backloggd). Built with **Java 21** and **Spring Boot 4**, this system allows users to track their gaming progress, rate games, write reviews, and discover new titles. Real game data is seamlessly fetched from the external RAWG Video Games API.
 
 ## ✨ Key Features
 
