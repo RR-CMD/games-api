@@ -161,7 +161,7 @@ If you are reviewing this code for a technical evaluation, I recommend checking 
 1.  **`RedisConfig.java` & `GameService.java`**: Demonstrates advanced caching architectures, including custom TTLs for eventual consistency and "Landing Page" caching to prevent memory leaks from combinatorial explosion.
 2.  **`LoggingAspect.java`**: Demonstrates AOP capabilities to automatically measure performance and log data while isolating security-sensitive payloads.
 3.  **`RawgClient.java`**: Demonstrates declarative external REST client integration using OpenFeign.
-4.  **`JwtFilter.java` & `SecurityConfig.java`**: Demonstrates modern, stateless Spring Security 6+ implementation.
+4.  **`JwtFilter.java` & `SecurityConfig.java`**: Demonstrates modern, stateless Spring Security implementation.
 5.  **`GameRepository.java`**: Demonstrates complex, highly-dynamic Spring Data JPA `@Query` implementations for advanced filtering.
 
 ## 🗺️ Roadmap & Future Enhancements
