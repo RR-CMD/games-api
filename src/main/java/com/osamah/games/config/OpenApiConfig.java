@@ -7,6 +7,7 @@ import io.swagger.v3.oas.models.info.Info;
 import io.swagger.v3.oas.models.security.SecurityRequirement;
 import io.swagger.v3.oas.models.security.SecurityScheme;
 import io.swagger.v3.oas.models.servers.Server;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -15,20 +16,19 @@ import java.util.List;
 @Configuration
 public class OpenApiConfig {
 
+    @Value("${application.swagger.server-url}")
+    private String serverUrl;
+
     @Bean
     public OpenAPI customOpenAPI() {
         final String securitySchemeName = "bearerAuth";
 
-        Server localServer = new Server();
-        localServer.setUrl("http://localhost:8080");
-        localServer.setDescription("Local Development Environment");
-
-        Server productionServer = new Server();
-        productionServer.setUrl("https://games-api-production-d0f0.up.railway.app");
-        productionServer.setDescription("Production Environment on Railway");
+        Server targetServer = new Server();
+        targetServer.setUrl(serverUrl);
+        targetServer.setDescription("Active Environment Gateway");
 
         return new OpenAPI()
-                .servers(List.of(localServer, productionServer))
+                .servers(List.of(targetServer))
                 .info(new Info().title("Games API")
                         .version("1.0")
                         .description("API documentation for the Video Game Library Management System")
