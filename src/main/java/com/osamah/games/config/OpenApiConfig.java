@@ -28,7 +28,7 @@ public class OpenApiConfig {
         productionServer.setDescription("Production Environment on Railway");
 
         return new OpenAPI()
-                .servers(List.of(productionServer, localServer))
+                .servers(List.of(localServer, productionServer))
                 .info(new Info().title("Games API")
                         .version("1.0")
                         .description("API documentation for the Video Game Library Management System")
